@@ -55,10 +55,13 @@ if __name__ == "__main__":
 
     # Optional argument for time (defaults to now)
     parser.add_argument("--time", type=str,
-                        default=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        default=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
                         help="Override time string (YYYY-MM-DD HH:MM:SS)")
 
     args = parser.parse_args()
+
+    print(f"Sending {args.time} to relay {args.relay} via gateway {args.gateway}")
+    send_time_sync(args.time, args.gateway, args.relay)
 
     print(f"Sending {args.time} to relay {args.relay} via gateway {args.gateway}")
     send_time_sync(args.time, args.gateway, args.relay)
