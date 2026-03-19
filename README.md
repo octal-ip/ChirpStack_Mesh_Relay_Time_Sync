@@ -35,9 +35,9 @@ config commands_commands '150'
 
 ## Manual Usage
 **Auto-sync current time**  
-python3 sync_mesh_time.py <GATEWAY_ID> <RELAY_ID>
+`python3 sync_mesh_time.py <GATEWAY_ID> <RELAY_ID>`
 
 **Sync specific time**  
-python3 sync_mesh_time.py <GATEWAY_ID> <RELAY_ID> --time "2026-01-01 09:00:00"  
+`python3 sync_mesh_time.py <GATEWAY_ID> <RELAY_ID> --time "2026-01-01 09:00:00"`  
 Note that time must be provided in UTC format.
 
